@@ -27,4 +27,4 @@ if st.session_state.query:
     wc_texts = [{"id": i, "title": r['title']} for i, r in news.iterrows()]
     y = wc_d.generate_wordcloud(texts=wc_texts)
     wordcloud = y.get_result()
-    st.image([wordcloud[1]["src"], wordcloud[2]["src"]]])
+    st.image([wordcloud[1]["src"], wordcloud[2]["src"]])
