@@ -4,6 +4,7 @@ from pydaisi import Daisi
 import streamlit as st
 import pandas as pd
 import os
+from datetime import datetime
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -27,4 +28,5 @@ if st.session_state.query:
     wc_texts = [{"id": i, "title": r['title']} for i, r in news.iterrows()]
     y = wc_d.generate_wordcloud(texts=wc_texts)
     wordcloud = y.get_result()
-    st.image([wordcloud[1]["src"]], [wordcloud[1]["alt"]])
+    dat = datetime.now().strftime('%m/%d/%Y')
+    st.image(wordcloud[1]["src"], f"What is about {st.session_state.query} today ({dat})")
