@@ -28,12 +28,12 @@ if st.session_state.query:
     st.write(f"Here is the search result for {st.session_state.query}")
     st.dataframe(news_for_display)
 
-    # # call word cloud to build the word cloud out of it 
-    # wc_texts = [{"id": i, "title": r['title']} for i, r in news.iterrows()]
-    # y = wc_d.generate_wordcloud(texts=wc_texts)
-    # wordcloud = y.get_result()
-    # dat = datetime.now().strftime('%m/%d/%Y')
-    # st.image(wordcloud[1]["src"], f"What is about {st.session_state.query} today ({dat})")
+    # call word cloud to build the word cloud out of it 
+    wc_texts = [{"id": i, "title": r['title']} for i, r in news.iterrows()]
+    y = wc_d.generate_wordcloud(texts=wc_texts)
+    wordcloud = y.get_result()
+    dat = datetime.now().strftime('%m/%d/%Y')
+    st.image(wordcloud[1]["src"], f"What is about {st.session_state.query} today ({dat})")
     
     location_texts = [r['title'] for i, r in news.iterrows()]
     z = le_d.get_locations(texts=location_texts[:limit])
