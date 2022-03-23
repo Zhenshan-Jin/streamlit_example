@@ -12,8 +12,7 @@ location_d = Daisi("LocationExtraction", base_url="https://dev3.daisi.io")
 
 # Create input widgets
 st.text_input("search query", key="query")
-limit = st.slider('x', min_value=10, max_value=50)  # 👈 this is a widget
-st.write(f"locations for top {limit}")
+limit = st.slider('Locations from top k news', min_value=10, max_value=50)  # 👈 this is a widget
 
 if st.session_state.query:
     # Query News
