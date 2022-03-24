@@ -28,14 +28,14 @@ class PyDaisi():
 
 # milk data API
 def z_milk_data_daisi():
-    milk = pd.read_csv("/Users/zhenshanjin/Documents/Belmont/sandy/UtilityDaisies/WordData/population.csv")
+    milk = pd.read_csv("population.csv")
     milk.rename(columns={"Population (historical estimates)": "Value"}, inplace=True)
     milk = milk[["Year", "Code", "Value"]]
     return milk
 
 # gdp data API
 def x_gdp_data_daisi():
-    gdp = pd.read_csv("/Users/zhenshanjin/Documents/Belmont/sandy/UtilityDaisies/WordData/gdp-per-capita-worldbank.csv")
+    gdp = pd.read_csv("gdp-per-capita-worldbank.csv")
     gdp.rename(columns={"GDP per capita, PPP (constant 2017 international $)": "Value"}, inplace=True)
     gdp = gdp[["Year", "Code", "Value"]]
     return gdp
@@ -49,7 +49,7 @@ def x_gdp_data_daisi():
 
 # cancer data API
 def y_cancer_data_daisi():
-    cancer = pd.read_csv("/Users/zhenshanjin/Documents/Belmont/sandy/UtilityDaisies/WordData/meat-consumption-vs-gdp-per-capita.csv")
+    cancer = pd.read_csv("meat-consumption-vs-gdp-per-capita.csv")
     cancer.rename(columns={"Meat food supply quantity (kg/capita/yr) (FAO, 2020)": "Value"}, inplace=True)
     cancer = cancer[["Year", "Code", "Value"]]
     return cancer
