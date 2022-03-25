@@ -13,7 +13,7 @@ def alpha3_to_country_name_continent(alpha3):
         return "Unknown", "Unknown"
     return country, continent
 
-def create_data(x, y, z):
+def run(x, y, z):
     x = x.rename(columns={"Value": "Value_x"})
     y = y.rename(columns={"Value": "Value_y"})
     z = z.rename(columns={"Value": "Value_z"})
