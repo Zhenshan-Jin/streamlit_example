@@ -3,6 +3,7 @@ import streamlit as st
 from pydaisi import Daisi
 import logging
 logging.getLogger().setLevel(logging.INFO)
+st.set_page_config(layout="wide")
 
 # Daisi: query data 
 x_daisi = Daisi(st.sidebar.selectbox('x', ("DataAPI GDPPerCapita",)), base_url="https://dev3.daisi.io")
