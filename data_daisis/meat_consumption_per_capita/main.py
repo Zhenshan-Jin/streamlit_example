@@ -1,4 +1,4 @@
-import panadas as pd
+import pandas as pd
 
 DATA_NAME = "Meat food supply quantity (kg/capita/yr)"
 
